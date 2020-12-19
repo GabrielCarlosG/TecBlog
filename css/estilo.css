@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-size: 1em;
+    font-family: 'trebuchet MS', helvetica, sans-serif;
+    background: #e6e6e6;
+}
+
+/*
+**** layout ****
+*/
+
+#cabecalho{
+    background-color: #f7b600;
+    padding: 15px;
+    text-align: center;
+}
+
+#area-logo , #area-menu{
+    padding: 10px;
+}
+
+/*
+**** Formatações Do Menu ****
+*/
+
+a{
+    text-decoration: none;
+    color: #000000;
+}
+
+a:visited, a:link{
+    color: #ffffff;
+    padding: 8px 12px;
+}
+
+a:hover{
+    background-color: #ffffff;
+    color: #f7b600;
+}
+
+/*
+**** Formatações em Geral ****
+*/
+
+h1{
+    color: #4e4e4e;
+    font-size: 2.5em;
+}
+
+.branco{
+    color: white;
+}
