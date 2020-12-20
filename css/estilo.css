@@ -13,7 +13,7 @@ body{
 **** layout ****
 */
 
-#cabecalho{
+#header{
     background-color: #f7b600;
     padding: 15px;
     text-align: center;
@@ -21,6 +21,40 @@ body{
 
 #area-logo , #area-menu{
     padding: 10px;
+}
+
+#content{
+    width: 920px;
+    margin: 0 auto;
+}
+
+#area-posts, #area-side{
+    background: #ffffff;
+}
+
+#area-posts{
+    width: 660px;
+    float: left;
+}
+
+#area-side{
+    width: 240px;
+    float: right;
+}
+
+.post{
+    padding: 20px;
+    margin-bottom: 20px;
+    background: white;
+}
+
+#footer{
+    clear: both;
+    width: 920px;
+    text-align: center;
+    padding: 15px;
+    background: #ccc;
+    margin: 0 auto;
 }
 
 /*
