@@ -26,9 +26,10 @@ body{
 #content{
     width: 920px;
     margin: 0 auto;
+    padding: 15px;
 }
 
-#posts-area, #side-area{
+ #side-area{
     background: #ffffff;
 }
 
@@ -58,20 +59,33 @@ body{
 }
 
 /*
-**** Formatações Do Menu ****
+**** Formatações Dos links ****
 */
 
 a{
     text-decoration: none;
-    color: #000000;
+    color: #cccccc;
 }
 
 a:visited, a:link{
+    color: #f7b600;
+    /* padding: 8px 12px; */
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+/*
+**** Formatações Do Menu ****
+*/
+
+#header a:visited, #header a:link{
     color: #ffffff;
     padding: 8px 12px;
 }
 
-a:hover{
+#header a:hover{
     background-color: #ffffff;
     color: #f7b600;
 }
@@ -85,6 +99,18 @@ h1{
     font-size: 2.5em;
 }
 
+h2{
+    color: #f7b600;
+}
+
 .branco{
     color: white;
+}
+
+.post-date{
+    font-size: 0.8em;
+    display: block;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
