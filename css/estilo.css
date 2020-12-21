@@ -28,16 +28,16 @@ body{
     margin: 0 auto;
 }
 
-#area-posts, #area-side{
+#posts-area, #side-area{
     background: #ffffff;
 }
 
-#area-posts{
+#posts-area{
     width: 660px;
     float: left;
 }
 
-#area-side{
+#side-area{
     width: 240px;
     float: right;
 }
