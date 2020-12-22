@@ -29,9 +29,12 @@ body{
     padding: 15px;
 }
 
- #side-area{
-    background: #ffffff;
+.side-content{
+    background: white;
+    padding: 10px;
+    margin-bottom: 20px;
 }
+
 
 #posts-area{
     width: 660px;
@@ -56,6 +59,12 @@ body{
     padding: 15px;
     background: #ccc;
     margin: 0 auto;
+}
+
+.side-post{
+    font-size: 0.8em;
+    padding: 5px;
+    border-bottom: 1px dotted #ccc;
 }
 
 /*
@@ -101,6 +110,12 @@ h1{
 
 h2{
     color: #f7b600;
+}
+
+h3{
+    color: #565656;
+    background: #ccc;
+    padding: 5px;
 }
 
 .branco{
