@@ -1,6 +1,6 @@
 # tecblog
 
-Projeto inicial de um blog sobre técnologia, utilizando somente HTML e CSS
+Projeto inicial de um blog sobre tecnologia, utilizando somente HTML e CSS
 
 <hr>
 
