@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postagens</title>
+</head>
+<body>
+    <h1>Postagens</h1>
+    {% for postagem in postagens %}
+        <div class="post">
+            <h2>{{ postagem.titulo }}</h2>
+            <span>{{ postagem.data_postagem }}</span>
+            <img src="{{ postagem.imagem.url }}" alt="{{ postagem.titulo }}">
+            <p>{{ postagem.conteudo }}</p>
+            <a href="#">Leia mais</a>
+        </div>
+    {% endfor %}
+</body>
+</html>

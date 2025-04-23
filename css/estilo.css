@@ -13,7 +13,7 @@ body{
 **** layout ****
 */
 
-#header{
+#area-menu{
     background-color: #f7b600;
     padding: 15px;
     text-align: center;
@@ -89,12 +89,12 @@ a:hover{
 **** Formatações Do Menu ****
 */
 
-#header a:visited, #header a:link{
+#area-menu a:visited, #area-menu a:link{
     color: #ffffff;
     padding: 8px 12px;
 }
 
-#header a:hover{
+#area-menu a:hover{
     background-color: #ffffff;
     color: #f7b600;
 }
@@ -128,4 +128,59 @@ h3{
     border-bottom: 1px solid #cccccc;
     padding-bottom: 10px;
     margin-bottom: 10px;
+}
+
+/* Estilizando a área principal */
+.container {
+    width: 50%;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Estilizando os grupos de entrada */
+.input-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Estilizando campos de entrada */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Ajuste para textarea */
+textarea {
+    resize: none;
+}
+
+/* Botão */
+button {
+    width: 100%;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #555;
 }
