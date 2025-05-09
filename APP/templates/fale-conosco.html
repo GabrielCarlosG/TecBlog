@@ -11,7 +11,7 @@
         <h2>Fale Conosco</h2>
         <p>Entre em contato conosco para dúvidas, sugestões ou parcerias.</p>
 
-        <form action="enviar.php" method="post">
+        <form action="{{ url_for('fale_conosco') }}" method="post">
             <div class="input-group">
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
@@ -34,5 +34,8 @@
 
             <button type="submit">Enviar</button>
         </form>
+         {% if mensagem_enviada %}
+        <p class="success">Mensagem enviada com sucesso! Entraremos em contato em breve.</p>
+        {% endif %}
     </div>
     {% endblock %}
