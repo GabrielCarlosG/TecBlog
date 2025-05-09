@@ -1,41 +1,15 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CGTECH</title>
-    <link rel="stylesheet" href="../static/css/style.css">
-    <link rel="stylesheet" href="../static/css/estilo.css">
-</head>
-<body>
-    <!-- Cabeçalho com o menu de navegação -->
-    <header>
-        <div id="area-menu">
-            <div id="area-logo">
-             <h1>
-                   CG<span class="branco">TECH</span>
-                </h1>
-            </div>
-        </div>
-        <nav id="area-menu">
-            <a href="index.html">Home</a>
-            <a href="sobre.html">Sobre</a>
-            <a href="services.html">Serviços</a>
-            <a href="portifolio.html">Portfólio</a>
-            <a href="fale-conosco.html">Fale Conosco</a>
-        </nav>
-    </header>
+{% extends 'base.html' %}
+
+{% block title %}Fale Conosco - CGTech{% endblock %}
+{% block extra_css %}
+<!-- <link rel="stylesheet" href="../static/css/estilo.css"> -->
+<link rel="stylesheet" href="../static/css/index.css"> {% endblock %}
+
+{% block content %}
 
     <!-- Conteúdo da página -->
     <section id="main-content">
         <h1>Bem-vindo à CGTECH Consultoria!</h1>
         <p>Somos especialistas em TI, oferecendo soluções personalizadas para o seu negócio.</p>
     </section>
-
-    <!-- Rodapé -->
-    <footer>
-        <p>&copy; 2025 CGTECH Consultoria. Todos os direitos reservados.</p>
-    </footer>
-
-</body>
-</html>
+ {% endblock %}

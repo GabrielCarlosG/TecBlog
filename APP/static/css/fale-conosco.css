@@ -15,14 +15,15 @@ h1, h2, h3 {
     font-family: 'Roboto', sans-serif;
 }
 
-/* Menu de navegação */
+/* Menu de navegação
 #area-menu {
-    background: linear-gradient(90deg, #ff9f00, #ff6f00);
+    background: linear-gradient(90deg, #007bff, #003366); 
     padding: 15px 0;
     text-align: center;
-}
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+} */
 
-#area-menu a {
+/* #area-menu a {
     text-decoration: none;
     color: white;
     padding: 10px 20px;
@@ -33,11 +34,42 @@ h1, h2, h3 {
     font-size: 1rem;
     border-radius: 5px;
     transition: 0.3s ease;
-}
+} */
 
-#area-menu a:hover {
+/* #area-menu a:hover {
     background-color: #fff;
     color: #ff6f00;
+} */
+
+/* Botão */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #029bd8; /* Azul escuro */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #003366; /* Azul */
+}
+
+#area-logo h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#area-logo .branco {
+    color: white;
+}
+
+#area-logo .preto {
+    color: black;
 }
 
 /* Container do formulário */
@@ -104,7 +136,7 @@ textarea {
 button {
     width: 100%;
     padding: 12px;
-    background-color: #ff6f00;
+    background-color: #029bd8;
     color: white;
     border: none;
     border-radius: 8px;
@@ -114,7 +146,7 @@ button {
 }
 
 button:hover {
-    background-color: #ff9f00;
+    background-color: #003366;
 }
 
 /* Estilizando o footer */

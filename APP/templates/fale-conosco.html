@@ -1,29 +1,11 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CG TECH - Fale Conosco</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/fale-conosco.css"> <!-- Link para o novo CSS -->
-    <link rel="stylesheet" type="text/css" href="../static/css/estilo.css"> <!-- Link para o novo CSS -->
-</head>
-<body>
-    <header>
-        <div id="area-menu">
-            <div id="area-logo">
-             <h1>
-                   CG<span class="branco">TECH</span>
-                </h1>
-            </div>
-        </div>
-        <nav id="area-menu">
-            <a href="index.html">Home</a>
-            <a href="Sobre.html">Sobre</a>
-            <a href="Services.html">Serviços</a>
-            <a href="Portifolio.html">Portfólio</a>
-            <a href="fale-conosco.html">Fale Conosco</a>
-        </nav>
-    </header>
+{% extends 'base.html' %}
+
+{% block title %}Fale Conosco - CGTech{% endblock %}
+{% block extra_css %}
+<!-- <link rel="stylesheet" href="../static/css/estilo.css"> -->
+<link rel="stylesheet" href="../static/css/fale-conosco.css"> {% endblock %}
+
+{% block content %}
 
     <div class="container">
         <h2>Fale Conosco</h2>
@@ -53,11 +35,4 @@
             <button type="submit">Enviar</button>
         </form>
     </div>
-
-    <footer>
-        <p>&copy; 2025 CGTECH Consultoria. Todos os direitos reservados.</p>
-    </footer>
-    <script src="../static/JS/fale-conosco.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>    
-</body>
-</html>
+    {% endblock %}

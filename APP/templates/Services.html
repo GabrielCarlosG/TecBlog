@@ -1,33 +1,13 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CG TECH - Services</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/estilo.css">
-    <link rel="stylesheet" type="text/css" href="../static/css/servicos.css">
-</head>
-<body>
-    <header>
-        <div id="area-menu">
-            <div id="area-logo">
-                <h1>
-                    CG<span class="branco">TECH</span>
-                </h1>
-            </div>
-            <nav id="area-menu">
-                <a href="index.html">Home</a>
-                <a href="Sobre.html">Sobre</a>
-                <a href="Services.html">Serviços</a>
-                <a href="Portifolio.html">Portfólio</a>
-                <!-- <a href="#">Eletronicos</a> -->
-                <a href="fale-conosco.html">Fale Conosco</a>
-            </nav>
-        </div>
-    </header>
+{% extends 'base.html' %}
 
-    <main>
-        <section id="servicos">
+{% block title %}Fale Conosco - CGTech{% endblock %}
+{% block extra_css %}
+<!-- <link rel="stylesheet" href="../static/css/estilo.css"> -->
+<link rel="stylesheet" href="../static/css/servicos.css"> {% endblock %}
+
+{% block content %}
+
+    <section id="servicos">
             <h2>Serviços</h2>
             <p class="intro">Na <strong>CG Tech Consultoria</strong>, oferecemos soluções práticas, personalizadas e eficientes para otimizar processos, integrar sistemas e transformar a tecnologia em uma aliada do seu negócio.</p>
     
@@ -75,9 +55,4 @@
                 </div>
             </div>
         </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 CGTECH Consultoria. Todos os direitos reservados.</p>
-    </footer>
-    </body>
-    </html>
+{% endblock %}

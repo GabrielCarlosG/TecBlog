@@ -1,29 +1,11 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CG TECH - Portfólio</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/portifolio.css">
-    <link rel="stylesheet" type="text/css" href="../static/css/estilo.css">
-</head>
-<body>
-    <header>
-        <div id="area-menu">
-            <div id="area-logo">
-                <h1>
-                    CG<span class="branco">TECH</span>
-                </h1>
-            </div>
-            <nav id="area-menu">
-                <a href="index.html">Home</a>
-                <a href="sobre.html">Sobre</a>
-                <a href="Services.html">Serviços</a>
-                <a href="Portifolio.html">Portfólio</a>
-                <!-- <a href="#">Eletronicos</a> -->
-                <a href="fale-conosco.html">Fale Conosco</a>
-            </nav>
-    </header>
+{% extends 'base.html' %}
+
+{% block title %}Fale Conosco - CGTech{% endblock %}
+{% block extra_css %}
+<!-- <link rel="stylesheet" href="../static/css/estilo.css"> -->
+<link rel="stylesheet" href="../static/css/portifolio.css"> {% endblock %}
+
+{% block content %}
     
     <div id="content">
         <section id="portfolio" class="portfolio-section">
@@ -43,9 +25,4 @@
         </section>
         
     </div>
-    
-    <footer>
-        <p>&copy; 2025 CGTECH Consultoria. Todos os direitos reservados.</p>
-    </footer> 
-</body>
-</html>
+{% endblock %}

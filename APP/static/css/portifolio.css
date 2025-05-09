@@ -23,6 +23,16 @@
     padding: 0 10px;
 }
 
+#portfolio h2::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background-color: #00b7ff;
+    display: block;
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
 .portfolio-card {
     background: white;
     padding: 25px;

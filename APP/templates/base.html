@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}CGTECH{% endblock %}</title>
+
+    <!-- CSS base (usado em todas as páginas) -->
+    <link rel="stylesheet" href="../static/css/estilo.css">
+
+    <!-- CSS específico da página -->
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+<header>
+        <div id="area-menu">
+            <div id="area-logo">
+             <h1>
+                   CG<span class="branco">TECH</span>
+                </h1>
+            </div>
+        </div>
+        <nav id="area-menu">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('sobre') }}">Sobre</a>
+            <a href="{{ url_for('servicos') }}">Serviços</a>
+            <a href="{{ url_for('portifolio') }}">Portfólio</a>
+            <a href="{{ url_for('fale_conosco') }}">Fale Conosco</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+<footer>
+        <p>&copy; 2025 CGTECH Consultoria. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,30 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CG TECH - Sobre</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/estilo.css">
-    <link rel="stylesheet" type="text/css" href="../static/css/sobre.css">
-</head>
-<body>
-    <header>
-        <div id="area-menu">
-            <div id="area-logo">
-                <h1>
-                    CG<span class="branco">TECH</span>
-                </h1>
-            </div>
-            <nav id="area-menu">
-                <a href="index.html">Home</a>
-                <a href="Sobre.html">Sobre</a>
-                <a href="Services.html">Serviços</a>
-                <a href="Portifolio.html">Portfólio</a>
-                <!-- <a href="#">Eletronicos</a> -->
-                <a href="fale-conosco.html">Fale Conosco</a>
-            </nav>
-    </header>
-    
+{% extends 'base.html' %}
+
+{% block title %}Fale Conosco - CGTech{% endblock %}
+{% block extra_css %}
+<!-- <link rel="stylesheet" href="../static/css/estilo.css"> -->
+<link rel="stylesheet" href="../static/css/sobre.css"> {% endblock %}
+
+{% block content %}
     <section id="sobre">
         <h2>Quem Somos</h2>
         <div class="sobre-container">
@@ -39,42 +20,4 @@
           </div>
         </div>
       </section>
-      
-      
-        <!-- <div id="side-area">
-
-            <div class="side-content">
-                <h3>
-                    Postagens Recentes
-                </h3>
-                <div class="side-post">
-                    <P>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
-                        <a href="#">Leia mais</a>
-                    </P>
-                </div>
-                <div class="side-post">
-                    <P>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
-                        <a href="#">Leia mais</a>
-                    </P>
-                </div>
-            </div>
-            <div class="side-content">
-                <h3>
-                    Categorias
-                </h3>
-                <a href="#">Jogos</a><br>
-                <a href="#">Celulares</a><br>
-                <a href="#">Informatica</a><br>
-                <a href="#">Eletronicos</a><br>
-                <a href="#">Jogos</a>
-
-        </div>
-    </div> -->
-    
-    <footer>
-        <p>&copy; 2025 CGTECH Consultoria. Todos os direitos reservados.</p>
-    </footer>  
-</body>
-</html>
+{% endblock %}
