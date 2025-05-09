@@ -16,7 +16,7 @@ body {
 */
 
 #area-menu {
-    background: linear-gradient(90deg, #007bff, #0056b3); /* Azul */
+    background: linear-gradient(90deg, #007bff, #003366); /* Azul */
     padding: 15px 0;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -117,7 +117,7 @@ textarea {
 button {
     width: 100%;
     padding: 12px;
-    background-color: #00b7ff; /* Azul escuro */
+    background-color: #029bd8; /* Azul escuro */
     color: white;
     border: none;
     border-radius: 8px;
@@ -127,7 +127,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3; /* Azul */
+    background-color: #003366; /* Azul */
 }
 
 /* Estilizando o footer */
