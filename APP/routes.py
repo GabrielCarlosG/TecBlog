@@ -1,6 +1,7 @@
 # app/routes.py
 from flask import render_template, request, redirect, url_for
-from app import app
+from flask_mail import Message
+from app import app, mail
 
 @app.route('/', endpoint='index')
 def index():
@@ -10,19 +11,24 @@ def index():
 def fale_conosco():
     if request.method == 'POST':
         nome = request.form['nome']
-        email = request.form['email']
         assunto = request.form['assunto']
+        email = request.form['email']
         mensagem = request.form['mensagem']
 
-        # Aqui, você pode salvar os dados no banco de dados ou enviar um e-mail, por exemplo.
-        # Vou apenas exibir os dados no terminal para teste
-        print(f"Nome: {nome}")
-        print(f"Email: {email}")
-        print(f"Assunto: {assunto}")
-        print(f"Mensagem: {mensagem}")
+        # Cria a mensagem de e-mail
+        msg = Message(
+            'Nova mensagem de Fale Conosco',
+            recipients=['adm@cgtech.tec.br'],  # E-mail para onde será enviado
+            body=f'Nome: {nome}\nEmail: {email}\nMensagem:\n{mensagem}'
+        )
 
-        # Após processar, podemos redirecionar para a página ou mostrar uma mensagem de sucesso
-        return render_template('fale-conosco.html', mensagem_enviada=True)
+        # Envia o e-mail
+        try:
+            mail.send(msg)
+            return render_template('fale-conosco.html', mensagem_enviada=True)
+        except Exception as e:
+            print(f'Erro ao enviar e-mail: {e}')
+            return render_template('fale-conosco.html', error_message="Ocorreu um erro ao enviar sua mensagem. Tente novamente.")
 
     return render_template('fale-conosco.html')
 

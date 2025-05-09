@@ -34,8 +34,13 @@
 
             <button type="submit">Enviar</button>
         </form>
-         {% if mensagem_enviada %}
-        <p class="success">Mensagem enviada com sucesso! Entraremos em contato em breve.</p>
+
+        {% if mensagem_enviada %}
+            <p class="success">Mensagem enviada com sucesso! Entraremos em contato em breve.</p>
+        {% endif %}
+
+         {% if error_message %}
+            <p class="error">{{ error_message }}</p>
         {% endif %}
     </div>
     {% endblock %}
