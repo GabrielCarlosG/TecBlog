@@ -1,0 +1,77 @@
+/* Estilo da seção de portfólio */
+
+.portfolio-section {
+    background-color: #f5faff;
+    padding: 50px 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.portfolio-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #003366;
+    letter-spacing: 1px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.portfolio-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 51, 102, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 51, 102, 0.15);
+}
+
+.portfolio-card h3 {
+    color: #003366;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.portfolio-card p {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.portfolio-card a {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.portfolio-card a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade */
+@media screen and (max-width: 600px) {
+    .portfolio-section h2 {
+        font-size: 2rem;
+    }
+
+    .portfolio-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .portfolio-card p,
+    .portfolio-card a {
+        font-size: 0.95rem;
+    }
+}

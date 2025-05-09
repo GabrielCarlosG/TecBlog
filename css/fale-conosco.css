@@ -11,15 +11,15 @@ body {
     line-height: 1.6;
 }
 
-/*
-**** layout ****
-*/
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+}
 
+/* Menu de navegação */
 #area-menu {
-    background: linear-gradient(90deg, #007bff, #0056b3); /* Azul */
+    background: linear-gradient(90deg, #ff9f00, #ff6f00);
     padding: 15px 0;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 #area-menu a {
@@ -37,30 +37,10 @@ body {
 
 #area-menu a:hover {
     background-color: #fff;
-    color: #007bff; /* Azul */
+    color: #ff6f00;
 }
 
-/* Header - Logo */
-#area-logo h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-#area-logo .branco {
-    color: white;
-}
-
-#area-logo .preto {
-    color: black;
-}
-
-/* Títulos */
-h1, h2, h3 {
-    font-family: 'Roboto', sans-serif;
-}
-
-/* Container do conteúdo */
+/* Container do formulário */
 .container {
     width: 80%;
     max-width: 600px;
@@ -75,6 +55,13 @@ h1, h2, h3 {
 
 .container:hover {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Títulos */
+h2 {
+    color: #00b7ff;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
 /* Estilo dos campos de entrada */
@@ -102,7 +89,7 @@ input, textarea {
 }
 
 input:focus, textarea:focus {
-    border-color: #007bff; /* Azul */
+    border-color: #ff6f00;
     background-color: #fff;
     outline: none;
 }
@@ -117,7 +104,7 @@ textarea {
 button {
     width: 100%;
     padding: 12px;
-    background-color: #00b7ff; /* Azul escuro */
+    background-color: #ff6f00;
     color: white;
     border: none;
     border-radius: 8px;
@@ -127,7 +114,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3; /* Azul */
+    background-color: #ff9f00;
 }
 
 /* Estilizando o footer */

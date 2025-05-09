@@ -1,0 +1,76 @@
+#sobre {
+    padding: 60px 30px;
+    max-width: 1100px;
+    margin: 40px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9fafc;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 183, 255, 0.05);
+}
+
+#sobre h2 {
+    font-size: 36px;
+    color: #1a202c;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+#sobre h2::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background-color: #00b7ff;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.sobre-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.sobre-container img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.sobre-container .texto {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sobre-container p {
+    font-size: 18px;
+    color: #2d3748;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.sobre-container ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sobre-container ul li::before {
+    content: "✔";
+    color: #00b7ff;
+    margin-right: 8px;
+}
+
+.sobre-container ul li {
+    font-size: 17px;
+    color: #1a202c;
+    margin-bottom: 10px;
+}
