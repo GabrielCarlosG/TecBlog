@@ -43,3 +43,6 @@ def servicos():
 @app.route('/portifolio', endpoint='portifolio')
 def portifolio():
     return render_template('Portifolio.html')
+@app.route('/noticia', endpoint='noticia')
+def noticia():
+    return render_template('noticia.html')
