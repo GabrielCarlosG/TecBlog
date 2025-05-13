@@ -1,0 +1,6 @@
+<h2>Mensagens Recebidas</h2>
+<ul>
+  {% for msg in mensagens %}
+    <li><strong>{{ msg.nome }}</strong> {{ msg.assunto }} - ({{ msg.email }}) - {{ msg.mensagem }}</li>
+  {% endfor %}
+</ul>

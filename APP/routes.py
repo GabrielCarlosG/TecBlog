@@ -48,3 +48,8 @@ def portifolio():
 @bp.route('/noticia', endpoint='noticia')
 def noticia():
     return render_template('noticia.html')
+
+@bp.route('/mensagens')
+def listar_mensagens():
+    mensagens = Mensagem.query.all()
+    return render_template('mensagens.html', mensagens=mensagens)
