@@ -1,48 +1,50 @@
 # app/routes.py
-from flask import render_template, request, redirect, url_for
-from flask_mail import Message
-from app import app, mail
+from flask import render_template, request, redirect, url_for, flash, Blueprint
+from app import db
+from app.models import Mensagem
 
-@app.route('/', endpoint='index')
+bp = Blueprint('main', __name__)
+
+@bp.route('/', endpoint='index')
 def index():
     return render_template('index.html')
 
-@app.route('/fale-conosco', methods=['GET', 'POST'])
+@bp.route('/fale-conosco', methods=['GET', 'POST'])
 def fale_conosco():
     if request.method == 'POST':
-        nome = request.form['nome']
-        assunto = request.form['assunto']
-        email = request.form['email']
-        mensagem = request.form['mensagem']
+        nome = request.form.get('nome')
+        email = request.form.get('email')
+        assunto = request.form.get('assunto')
+        mensagem = request.form.get('mensagem')
 
-        # Cria a mensagem de e-mail
-        msg = Message(
-            'Nova mensagem de Fale Conosco',
-            recipients=['adm@cgtech.tec.br'],  # E-mail para onde será enviado
-            body=f'Nome: {nome}\nEmail: {email}\nMensagem:\n{mensagem}'
-        )
+        if not nome or not email or not mensagem:
+            flash('Por favor, preencha todos os campos.', 'error')
+            return redirect(url_for('main.fale_conosco'))
 
-        # Envia o e-mail
-        try:
-            mail.send(msg)
-            return render_template('fale-conosco.html', mensagem_enviada=True)
-        except Exception as e:
-            print(f'Erro ao enviar e-mail: {e}')
-            return render_template('fale-conosco.html', error_message="Ocorreu um erro ao enviar sua mensagem. Tente novamente.")
+        nova_mensagem = Mensagem(
+            nome=nome, 
+            email=email, 
+            assunto = assunto,
+            mensagem=mensagem)
+        db.session.add(nova_mensagem)
+        db.session.commit()
+
+        flash('Mensagem enviada com sucesso!', 'success')
+        return redirect(url_for('main.fale_conosco'))
 
     return render_template('fale-conosco.html')
 
-@app.route('/sobre', endpoint='sobre')
+@bp.route('/sobre', endpoint='sobre')
 def sobre():
     return render_template('Sobre.html')
 
-@app.route('/servicos', endpoint='servicos')
+@bp.route('/servicos', endpoint='servicos')
 def servicos():
     return render_template('Services.html')
 
-@app.route('/portifolio', endpoint='portifolio')
+@bp.route('/portifolio', endpoint='portifolio')
 def portifolio():
     return render_template('Portifolio.html')
-@app.route('/noticia', endpoint='noticia')
+@bp.route('/noticia', endpoint='noticia')
 def noticia():
     return render_template('noticia.html')
