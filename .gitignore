@@ -1,5 +1,5 @@
-APP/models.py
-config.py
+# APP/models.py
+# config.py
 __pycache__/
 *.pyc
 *.pyo
