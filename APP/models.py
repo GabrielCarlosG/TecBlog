@@ -12,3 +12,5 @@ class Mensagem(db.Model):
 
     def __repr__(self):
         return f'<Mensagem {self.nome} - {self.assunto}>'
+    
+# class Noticia(db.Models):
