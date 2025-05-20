@@ -45,11 +45,29 @@ def servicos():
 @bp.route('/portifolio', endpoint='portifolio')
 def portifolio():
     return render_template('Portifolio.html')
+
 @bp.route('/noticia', endpoint='noticia')
 def noticia():
     return render_template('noticia.html')
 
+# Tratamento da pagina mensagem
+
 @bp.route('/mensagens')
 def listar_mensagens():
-    mensagens = Mensagem.query.all()
+    mensagens = Mensagem.query.filter_by(snRespondido=False).all()
     return render_template('mensagens.html', mensagens=mensagens)
+
+@bp.route('/responder/<int:id>', methods=['POST'])
+def atualizar_resposta(id):
+    mensagem = Mensagem.query.get_or_404(id)
+    mensagem.snRespondido = 'snRespondido' in request.form
+    db.session.commit()
+    return redirect(url_for('main.listar_mensagens'))
+
+@bp.route('/deletar/<int:id>', methods=['POST'])
+def deletar_mensagem(id):
+    mensagem = Mensagem.query.get_or_404(id)
+    db.session.delete(mensagem)
+    db.session.commit()
+    flash('Mensagem Deletada com sucesso', 'suvess')
+    return redirect(url_for('main.listar_mensagens'))

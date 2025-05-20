@@ -9,3 +9,4 @@ venv/
 *.sqlite3
 instance/
 .env
+migrations/versions/df1f5153e286_.py
