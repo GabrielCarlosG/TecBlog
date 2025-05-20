@@ -1,6 +1,35 @@
 <h2>Mensagens Recebidas</h2>
-<ul>
-  {% for msg in mensagens %}
-    <li><strong>{{ msg.nome }}</strong> {{ msg.assunto }} - ({{ msg.email }}) - {{ msg.mensagem }}</li>
-  {% endfor %}
-</ul>
+<table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nome</th>
+      <th>Assunto</th>
+      <th>Email</th>
+      <th>Mensagem</th>
+      <th>Respondido</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for msg in mensagens %}
+    <tr>
+      <td>{{ msg.id }}</td>
+      <td>{{ msg.nome }}</td>
+      <td>{{ msg.assunto }}</td>
+      <td>{{ msg.email }}</td>
+      <td>{{ msg.mensagem }}</td>
+       <td>
+        <form method="POST" action="{{ url_for('main.atualizar_resposta', id=msg.id) }}">
+          <input type="checkbox" name="snRespondido" onchange="this.form.submit()" {% if msg.snRespondido %}checked{% endif %}>
+        </form>
+      </td>
+      <td>
+        <form method="POST" action="{{url_for('main.deletar_mensagem', id=msg.id)}}" onsubmit="return confirm('Tem certeza que deseja deletar esta mensagem?');">
+          <button type="submit" class="btn btn-danger">Del</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
