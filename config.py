@@ -12,7 +12,7 @@ class Config:
     
     # Configurações de segurança para cookies de sessão (opcional)
     SESSION_COOKIE_HTTPONLY = True
-    SESSION_COOKIE_SECURE = False  # Ativar True quando estiver em produção
+    SESSION_COOKIE_SECURE = True  # Ativar True quando estiver em produção
 
     # Banco de Dados
     SQLALCHEMY_DATABASE_URI = 'sqlite:///mensagens.db'

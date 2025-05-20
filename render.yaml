@@ -1,9 +1,7 @@
 services:
   - type: web
-    name: CGTECH
+    name: cgtech
     env: python
     buildCommand: "pip install -r requirements.txt"
     startCommand: "gunicorn wsgi:app"
-    envVars:
-      - key: FLASK_ENV
-        value: production
+    plan: free
