@@ -14,10 +14,10 @@ def create_app():
     migrate.init_app(app, db)
 
     # Importa e registra o blueprint
-    from app.routes import bp as main_bp
+    from myapp.routes import bp as main_bp
     app.register_blueprint(main_bp)
 
     # Garante que os modelos sejam carregados
-    from app import models
+    from myapp import models
 
     return app

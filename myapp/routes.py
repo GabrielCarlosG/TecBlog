@@ -1,7 +1,7 @@
 # app/routes.py
 from flask import render_template, request, redirect, url_for, flash, Blueprint
-from app import db
-from app.models import Mensagem
+from myapp import db
+from myapp.models import Mensagem
 
 bp = Blueprint('main', __name__)
 

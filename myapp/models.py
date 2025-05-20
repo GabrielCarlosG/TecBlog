@@ -1,4 +1,4 @@
-from app import db
+from myapp import db
 from datetime import datetime
 
 class Mensagem(db.Model):
