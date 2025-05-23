@@ -2,6 +2,7 @@
 from flask import render_template, request, redirect, url_for, flash, Blueprint
 from myapp import db
 from myapp import models
+from time import sleep
 
 bp = Blueprint('main', __name__)
 
@@ -9,7 +10,7 @@ bp = Blueprint('main', __name__)
 def index():
     return render_template('index.html')
 
-@bp.route('/fale-conosco', methods=['GET', 'POST'])
+@bp.route('/fale-conosco', methods=['GET','POST'])
 def fale_conosco():
     if request.method == 'POST':
         nome = request.form.get('nome')
@@ -17,9 +18,9 @@ def fale_conosco():
         assunto = request.form.get('assunto')
         mensagem = request.form.get('mensagem')
 
-        if not nome or not email or not mensagem:
-            flash('Por favor, preencha todos os campos.', 'error')
-            return redirect(url_for('main.fale_conosco'))
+        # if not nome or not email or not mensagem:
+        #     flash('Por favor, preencha todos os campos.', 'error')
+        #     return redirect(url_for('main.fale_conosco'))
 
         nova_mensagem = models.Mensagem(
             nome=nome, 
@@ -29,10 +30,11 @@ def fale_conosco():
         db.session.add(nova_mensagem)
         db.session.commit()
 
-        flash('Mensagem enviada com sucesso!', 'success')
-        return redirect(url_for('main.fale_conosco'))
-
+        # flash('Mensagem enviada com sucesso!', 'success')
+        return render_template('fale-conosco.html')
+    
     return render_template('fale-conosco.html')
+
 
 @bp.route('/sobre', endpoint='sobre')
 def sobre():
@@ -56,6 +58,12 @@ def portifolio():
 def noticia():
     return render_template('noticia.html')
 
+# Tela de Login oculta
+
+@bp.route('/login')
+def login():
+    return render_template('login.html')
+
 # Tratamento da pagina mensagem
 
 @bp.route('/mensagens')
@@ -75,5 +83,5 @@ def deletar_mensagem(id):
     mensagem = models.Mensagem.query.get_or_404(id)
     db.session.delete(mensagem)
     db.session.commit()
-    flash('Mensagem Deletada com sucesso', 'suvess')
+    flash('Mensagem Deletada com sucesso', 'success')
     return redirect(url_for('main.listar_mensagens'))
