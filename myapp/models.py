@@ -13,4 +13,12 @@ class Mensagem(db.Model):
     def __repr__(self):
         return f'<Mensagem {self.nome} - {self.assunto}>'
     
-# class Noticia(db.Models):
+class Noticia(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    titulo = db.Column(db.String(50), nullable=False)
+    conteudo = db.Column(db.Text, nullable=False)
+    data_publicacao = db.Column(db.DateTime, default=datetime.utcnow)
+    slug = db.Column(db.String(200), unique=True, nullable=False)
+
+    def __repr__(self):
+        return f'<Noticia {self.titulo} - {self.slug}>'

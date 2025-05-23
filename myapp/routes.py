@@ -1,7 +1,7 @@
 # app/routes.py
 from flask import render_template, request, redirect, url_for, flash, Blueprint
 from myapp import db
-from myapp.models import Mensagem
+from myapp import models
 
 bp = Blueprint('main', __name__)
 
@@ -21,7 +21,7 @@ def fale_conosco():
             flash('Por favor, preencha todos os campos.', 'error')
             return redirect(url_for('main.fale_conosco'))
 
-        nova_mensagem = Mensagem(
+        nova_mensagem = models.Mensagem(
             nome=nome, 
             email=email, 
             assunto = assunto,
@@ -37,6 +37,12 @@ def fale_conosco():
 @bp.route('/sobre', endpoint='sobre')
 def sobre():
     return render_template('Sobre.html')
+
+@bp.route('/noticia/<slug>', endpoint='noticia_detalhe')
+def noticia(slug):
+    noticia = models.Noticia.query.filter_by(slug=slug).first_or_404()
+    return render_template('noticia.html', noticia=noticia)
+    # lógica aqui
 
 @bp.route('/servicos', endpoint='servicos')
 def servicos():
@@ -54,19 +60,19 @@ def noticia():
 
 @bp.route('/mensagens')
 def listar_mensagens():
-    mensagens = Mensagem.query.filter_by(snRespondido=False).all()
+    mensagens = models.Mensagem.query.filter_by(snRespondido=False).all()
     return render_template('mensagens.html', mensagens=mensagens)
 
 @bp.route('/responder/<int:id>', methods=['POST'])
 def atualizar_resposta(id):
-    mensagem = Mensagem.query.get_or_404(id)
+    mensagem = models.Mensagem.query.get_or_404(id)
     mensagem.snRespondido = 'snRespondido' in request.form
     db.session.commit()
     return redirect(url_for('main.listar_mensagens'))
 
 @bp.route('/deletar/<int:id>', methods=['POST'])
 def deletar_mensagem(id):
-    mensagem = Mensagem.query.get_or_404(id)
+    mensagem = models.Mensagem.query.get_or_404(id)
     db.session.delete(mensagem)
     db.session.commit()
     flash('Mensagem Deletada com sucesso', 'suvess')
